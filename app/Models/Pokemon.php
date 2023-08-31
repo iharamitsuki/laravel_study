@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Pokemon extends Model
 {
+    use HasFactory;
+
     protected $table = 'pokemons';
     protected $datas = ['publication_date', 'expiration_date', 'registration_date'];
     protected $fillable = [
@@ -17,12 +20,14 @@ class Pokemon extends Model
 
     public function scopeSearch($query, $search)
     {
+        // dd($search);
         if ($search !== null) {
             $search_target = preg_split('/[\s]+/', $search);
 
             foreach($search_target as $value) {
                 $query->where('en_name', 'like', '%' . $value . '%');
             }
+            return $query;
         }
     }
 

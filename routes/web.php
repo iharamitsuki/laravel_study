@@ -17,9 +17,9 @@ use App\Http\Controllers\PokeDexController;
 |
 */
 // ポケモン図鑑
-Route::prefix('pokemon')
+Route::prefix('pokedex')
 ->controller(PokeDexController::class)
-->name('pokemon.')
+->name('pokedex/')
 ->group(function() {
     Route::get('/', 'index')->name('index');
 });

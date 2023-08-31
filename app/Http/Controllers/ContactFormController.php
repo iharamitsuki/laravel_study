@@ -26,6 +26,7 @@ class ContactFormController extends Controller
         // ページネーション
         $contacts = $query->select('id', 'name', 'title', 'created_at')->paginate(20);
 
+        dd($request);
         return view('contacts.index', compact('contacts'));
     }
 
