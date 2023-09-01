@@ -10,10 +10,11 @@ class PokeDexController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        // dd($search);
         $query = Pokemon::search($search);
 
         $pokeinfos = $query->get();
+
+        // dd($pokeinfos);
 
         return view('pokedex/index', compact('pokeinfos'));
     }

@@ -6,7 +6,7 @@ require "vendor/autoload.php";
 
 use Illuminate\Console\Command;
 use App\Models\Pokemon;
-// use GoogleTranslate\GoogleTranslate;
+use GoogleTranslate\GoogleTranslate;
 
 class GetPokemonInfo extends Command
 {
@@ -58,7 +58,7 @@ class GetPokemonInfo extends Command
                 $data = json_decode($r, true);
                 $p_info = self::getPokemonInfo($data);
                 print_r($p_info['id']);
-                // print_r($p_info['jp_name']) . "\n";
+                print_r($p_info['jp_name']) . "\n";
                 print_r($p_info['en_name']) . "\n";
                 print_r("\n");
                 $p_info = Pokemon::createPokemon($p_info);
@@ -77,8 +77,8 @@ class GetPokemonInfo extends Command
         $p_info['en_name'] = $d['name'];
         $from = "en"; // 英語
         $to   = "ja"; // 日本語
-        // $st = new GoogleTranslate($p_info['en_name'], $from, $to);
-        // $p_info['jp_name'] = $st->exec();
+        $st = new GoogleTranslate($p_info['en_name'], $from, $to);
+        $p_info['jp_name'] = $st->exec();
         $p_info['type1'] = $d['types'][0]['type']['name'];
         if (isset($d['types'][1])) {
             $p_info['type2'] = $d['types'][1]['type']['name'];

@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a71facd3bc44b98dd0049bb4ec1f890",
+    "content-hash": "8d89a04e8f243a4b7e000b9d38400c59",
     "packages": [
+        {
+            "name": "ammarfaizi2/googletranslate",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ammarfaizi2/GoogleTranslate.git",
+                "reference": "4dc8665fc98af0fe79abb17a4d01816b600b30c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ammarfaizi2/GoogleTranslate/zipball/4dc8665fc98af0fe79abb17a4d01816b600b30c5",
+                "reference": "4dc8665fc98af0fe79abb17a4d01816b600b30c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GoogleTranslate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ammar Faizi",
+                    "email": "ammarfaizi2@gmail.com"
+                }
+            ],
+            "description": "Google Translate",
+            "support": {
+                "issues": "https://github.com/ammarfaizi2/GoogleTranslate/issues",
+                "source": "https://github.com/ammarfaizi2/GoogleTranslate/tree/1.0.1"
+            },
+            "time": "2020-12-13T07:46:08+00:00"
+        },
         {
             "name": "barryvdh/laravel-debugbar",
             "version": "v3.8.2",
