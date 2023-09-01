@@ -32,9 +32,9 @@
                     <div class="flex flex-wrap -m-4">
                         @php  $i = 0; @endphp
                         @foreach ($pokeinfos as $poke)
-                            @if ($i < 151)
+                            @if ($i < 900)
                                 <div class="xl:w-1/6 md:w-1/6 p-1">
-                                    <h3 class="tracking-widest text-green-500 text-xs font-medium title-font">No.{{ $poke['p_id'] }} {{ $poke['en_name'] }}</h3>
+                                    <h3 class="tracking-widest text-green-500 text-xs font-medium title-font">No.{{ $poke['p_id'] }} {{ $poke['jp_name'] }}</h3>
                                     <div class="flex justify-center bg-gray-200 p-6 rounded-md">
                                         <img class="object-cover h-35" src="{{ $poke['front_default'] }}" alt="content">
                                     </div>

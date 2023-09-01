@@ -21,7 +21,6 @@ class ContactForm extends Model
 
     public function scopeSearch($query, $search)
     {
-        dd($search);
         if ($search !== null) {
             $search_split = mb_convert_kana($search, 's');
             $search_split2 = preg_split('/[\s]+/', $search_split);

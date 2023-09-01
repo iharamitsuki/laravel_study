@@ -22,10 +22,11 @@ class Pokemon extends Model
     {
         // dd($search);
         if ($search !== null) {
-            $search_target = preg_split('/[\s]+/', $search);
+            $search_split = mb_convert_kana($search, 's');
+            $search_target = preg_split('/[\s]+/', $search_split);
 
             foreach($search_target as $value) {
-                $query->where('en_name', 'like', '%' . $value . '%');
+                $query->where('jp_name', 'like', '%' . $value . '%');
             }
             return $query;
         }
@@ -35,7 +36,7 @@ class Pokemon extends Model
         if (empty($pokemon)) {
             self::create ([
                 'p_id'                           => $p_info['id'],
-                // 'jp_name'                        => $p_info['jp_name'],
+                'jp_name'                        => $p_info['jp_name'],
                 'en_name'                        => $p_info['en_name'],
                 'type1'                          => $p_info['type1'],
                 'type2'                          => $p_info['type2'],
